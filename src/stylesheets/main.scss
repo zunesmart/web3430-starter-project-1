@@ -1,17 +1,78 @@
 // Your styles go here; the following is but an example
-:root {
-  body {
-    background-color: lightcyan;
-  }
+@charset "uff-8";
 
-  h1 {
-    font-family:Arial, Helvetica, sans-serif;
-    margin-left: 1rem;
-    color: navy;
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
-    & .subtitle {
-      font-size: .8em;
-      color: gray
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  margin: 0;
+  background-color: ff6;
+  
+}
+
+.container {
+  max-width: 90%;
+  margin: 10px auto;
+  display: flex;
+  flex-flow: column nowrap;
+  nav {
+    display: flex;
+    background-color: maroon;
+    color:white;
+    ul {
+      display: flex;
+      flex: 1;
+      list-style: none;
+      padding: 0;
+  
+      & > li {
+        margin: 0;
+        padding: 0 10px;
+  
+      }
     }
   }
+  main {
+    display: flex;
+    flex-flow: row wrap;
+
+    & > .card {
+      width: 30%;
+      border: 1px solid aliceblue;
+      padding: 10px;
+      margin: 10px;
+      box-shadow: 1px 1px 5px .5px;
+    }
+      img {
+        width: 100%;
+      }
+      .extra {
+        list-style: none;
+        display: flex;
+        padding: 10px 0;
+        justify-content: center;
+        align-items: center;
+
+        & > li:not(:first-child) {
+          padding-left:20px;
+        }
+    }
+  }
+button.primary {
+  margin: 10px;
+  padding: 10px 20px;
+  border: 1px solid lightgray;
+  background: maroon;
+  color: white;
+
 }
+}
+
+
+

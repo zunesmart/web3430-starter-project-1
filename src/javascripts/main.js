@@ -7,15 +7,16 @@ require.context('../stylesheets/', true, /\.(css|scss)$/i)
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-class Hello extends React.Component {
+import {movies} from './movies' //use relitive
+import { MovieList } from './components/movie-list'
+
+class Main extends React.Component {
   render(){
-    return (
-      <h1>
-        Welcome to WEB 3430 
-        <span className="subtitle"> Powered by React!</span>
-      </h1>
-    )
+    return <MovieList movies={movies}/>
   }
 }
 
-ReactDOM.render(<Hello/>, document.getElementById('main'))
+
+
+
+ReactDOM.render(<Main/>, document.getElementById('main'))
