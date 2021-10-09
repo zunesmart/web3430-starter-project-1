@@ -7,8 +7,9 @@ import MovieForm from "./MovieForm"
 
 export const MovieContext = createContext()
 export default function MovieList(){
-      const [movies, setMovies] = useState(top10)
+      const [movies, setMovies] = useState(top10) 
       const history = useHistory()
+      console.log("console log works")
       return (
         <MovieContext.Provider value={{movies, setMovies}}>
           <nav>
