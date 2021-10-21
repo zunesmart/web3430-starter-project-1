@@ -158,7 +158,7 @@ export default function MovieForm() {
             <div className="field">
                 <label htmlFor="plot"></label>
                 <div className="control">
-                    <button className="primary">submit</button>
+                    <button className="primary" type="button">submit</button>
                     <button className="primary" onClick={()=>history.push("/movies")}>cancel</button>
                 </div>
             </div>
