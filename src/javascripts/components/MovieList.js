@@ -12,7 +12,7 @@ export default function MovieList(){
 
 
       useEffect(() => {
-        fetch('/top10.dat')
+        fetch('/api/movies')
           .then(response => response.text())
           .then(data => {
             setMovies(JSON.parse(data, (key, value) => {

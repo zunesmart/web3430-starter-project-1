@@ -8,7 +8,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'public'),
     // static: path.join(__dirname, 'dist'), // Webpack 5
     historyApiFallback: true,
     open: true,
@@ -17,7 +17,7 @@ module.exports = {
     historyApiFallback: true
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'javascripts/[name].js',
     publicPath:'/'
     // clean: true // Webpack 5
@@ -40,7 +40,7 @@ module.exports = {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       }, {
-        test: /\.(html|json|txt|dat|gif|jpg|png|svg|eot|ttf|woff|woff2)$/i,
+        test: /\.(html|json|txt|dat|gif|jpg|png|ico|svg|eot|ttf|woff|woff2)$/i,
         use: [{
           loader: 'file-loader',
           options: { 

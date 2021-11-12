@@ -7,11 +7,12 @@
   "keywords": [],
   "scripts": {
     "deploy": "npx webpack --mode production",
-    "start": "npx webpack-dev-server"
+    "start": "npx webpack-dev-server",
+    "server": "nodemon server.js --exec babel-node"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.15.0",
+    "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
     "autoprefixer": "^9.8.6",
@@ -29,8 +30,16 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@babel/node": "^7.16.0",
+    "cookie-parser": "^1.4.5",
     "date-fns": "^2.24.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
     "formik": "^2.2.9",
+    "http-errors": "^1.8.0",
+    "mongoose": "^6.0.12",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
     "react": "^17.0.2",
     "react-datepicker": "^4.2.1",
     "react-dom": "^17.0.2",
