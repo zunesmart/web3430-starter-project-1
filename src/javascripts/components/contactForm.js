@@ -1,10 +1,8 @@
 import React from "react";
-import { MovieContext } from "./MovieList";
 import { useHistory, useParams } from "react-router";
 import { useFormik } from "formik";
 import {toast} from 'react-toastify'
-
-
+import 'react-toastify/dist/ReactToastify.css'
 import * as yup from 'yup'
 
 
@@ -30,9 +28,27 @@ export default function ContactForm() {
         },
         validationSchema,
         onSubmit (values) {
-
-            }
-
+                fetch('/api/contact', {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":"application/json"
+                    },
+                    body: JSON.stringify(values)
+                }).then(() => {
+                  toast('Success!', {
+                    onClose: () => {
+                      document.location = "/movies"
+                        }
+                    })
+                    
+                }).catch((error) => {
+                  toast('Failed to Submit!', {
+                    onClose: () => {
+                      document.location = "/movies"
+                }
+             })
+            })
+        }
     })
 
 
@@ -72,7 +88,7 @@ export default function ContactForm() {
             <div className="field">
                 <label></label>
                 <div className="control">
-                    <button className="primary" type="button">submit</button>
+                    <button className="primary" type="submit">submit</button>
                     <button className="primary" onClick={()=>history.push("/movies")}>cancel</button>
                 </div>
             </div>
