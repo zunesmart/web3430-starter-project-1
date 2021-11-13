@@ -16,6 +16,12 @@ body {
   
 }
 
+.pull-content-right {
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
 .container {
   max-width: 90%;
   margin: 10px auto;

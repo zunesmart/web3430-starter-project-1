@@ -29,20 +29,14 @@ export default function MovieList(){
         return <p>Loading ... </p>
       return (
         <MovieContext.Provider value={{movies, setMovies}}>
-          <nav>
-            <ul>
-              <li><Link to="/"> Home</Link></li>
-              <li><Link to="/movies"> List</Link></li>
-              <li><Link to="/about"> About</Link></li> 
-            </ul>
+          <div className="pull-content-right">
             <Route path="/movies">
             <button className="primary" onClick={() => {
               movies.sort((a, b) => a.rating - b.rating) 
               setMovies(movies.map(m => m))}}>Sort</button>
               <button className="primary" onClick={()=> history.push('/movies/new')}>Add a New Movie</button>
             </Route>
-          </nav>
-
+          </div>
           <main>
             <Switch>
               <Route exact path="/movies">

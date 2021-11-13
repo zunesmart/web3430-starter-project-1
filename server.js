@@ -30,12 +30,13 @@ configureRoutes(app)
 
 // Handling errors
 app.use(function(req, res, next){
-    next(createError(404))
+    res.render('layout',{content:'error',err: createError(404), title: 'Top 10 Movies'})
 })
 
 app.use(function(err,req,res,next){
     res.status(err.status || 500)
-    res.render(err)
+    //redering page error as object
+    res.render('layout',{content:'error', err: err, title: 'Top 10 Movies'})
 })
 
 //create the web Server
