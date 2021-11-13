@@ -28,23 +28,23 @@ export default function ContactForm() {
         },
         validationSchema,
         onSubmit (values) {
-                fetch('/api/contact', {
-                    method: "POST",
-                    headers: {
-                        "Content-Type":"application/json"
-                    },
-                    body: JSON.stringify(values)
-                }).then(() => {
-                  toast('Success!', {
+            fetch('/api/contact', {
+                method: "POST",
+                headers: {
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify(values)
+              }).then(() => {
+                toast('Success!', {
                     onClose: () => {
-                      document.location = "/movies"
+                        document.location = "/movies"
                         }
                     })
                     
-                }).catch((error) => {
-                  toast('Failed to Submit!', {
+              }).catch((error) => {
+                toast('Failed to Submit!', {
                     onClose: () => {
-                      document.location = "/movies"
+                        document.location = "/movies"
                 }
              })
             })
