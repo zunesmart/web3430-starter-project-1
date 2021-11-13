@@ -15,8 +15,8 @@ export function VHelp({message}){
 
 const validationSchema = yup.object({
     name: yup.string().required(),
-    email: yup.string().email().required(),
-    message: yup.string().required(),
+    email: yup.string().email(),
+    message: yup.string(),
 })
 
 export default function ContactForm() {
