@@ -9,7 +9,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './components/App'
+import ContactForm from './components/contactForm'
 
 
-
-ReactDOM.render(<App/>, document.getElementById('main')) 
+if(document.getElementById('main')){
+    ReactDOM.render(<App/>, document.getElementById('main')) 
+}else if(document.getElementById('contact')){
+    ReactDOM.render(<ContactForm/>, document.getElementById('contact')) 
+}

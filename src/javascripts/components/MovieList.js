@@ -4,6 +4,7 @@ import  Movie  from "./Movie"
 import { Switch, Route, Link, Redirect, useHistory } from "react-router-dom"
 import { About, ErrorNotFound } from "./Pages"
 import MovieForm from "./MovieForm"
+import ContactForm from "./contactForm"
 
 export const MovieContext = createContext()
 export default function MovieList(){
@@ -53,6 +54,7 @@ export default function MovieList(){
               <Route path="/movies/new"><MovieForm/></Route>
               <Route path="/movies/:mid/edit"><MovieForm/></Route>
               <Route path="/about"><About/></Route>
+              <Route path="/contact"><ContactForm/></Route>
               <Redirect from="" to="/movies"/>
               <Route path="+"><ErrorNotFound/></Route>
             </Switch>
