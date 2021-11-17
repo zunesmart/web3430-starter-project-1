@@ -53,6 +53,25 @@ export default function MovieForm() {
         } : {...movie},
         validationSchema,
         onSubmit (values) {
+            fetch(`/api/movies${is_new ? '' : '/' + movie.id}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(values)
+              }).then(() => {
+                toast('Success!', {
+                  onClose: () => {
+                    document.location = "/movies"
+                    }
+                })
+              }).catch((error) => {
+                toast('Failed to Submit!', {
+                    onClose: () => {
+                        document.location = "/movies"
+                }
+            })
+          })
           if(is_new){
             let id = movies.length
             while(true){ 
