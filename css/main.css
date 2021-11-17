@@ -1,0 +1,125 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  margin: 0;
+  background-color: ff6;
+}
+
+.pull-content-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container {
+  max-width: 90%;
+  margin: 10px auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.container nav {
+  display: flex;
+  background-color: maroon;
+  color: white;
+}
+
+.container nav ul {
+  display: flex;
+  flex: 1;
+  list-style: none;
+  padding: 0;
+}
+
+.container nav ul > li {
+  margin: 0;
+  padding: 0 10px;
+}
+
+.container nav ul > li a {
+  text-decoration: none;
+  color: white;
+}
+
+.container main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.container main > .card {
+  width: 30%;
+  border: 1px solid aliceblue;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 1px 1px 5px .5px;
+}
+
+.container main img {
+  width: 100%;
+}
+
+.container main .extra {
+  list-style: none;
+  display: flex;
+  flex-flow: wrap;
+  padding: 10px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.container main .extra > li:not(:first-child) {
+  padding-left: 20px;
+}
+
+.container button.primary {
+  margin: 10px;
+  padding: 10px 20px;
+  border: 1px solid lightgray;
+  background: maroon;
+  color: white;
+}
+
+footer {
+  background: #000;
+  color: white;
+  text-align: center;
+}
+
+form {
+  width: 90%;
+}
+
+form .field {
+  display: flex;
+}
+
+form label {
+  width: 15%;
+  padding: 5px;
+  font-weight: bold;
+}
+
+form .control {
+  width: 85%;
+}
+
+form input, form textarea {
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  width: 60%;
+}
+
+form p {
+  margin: 5px 0;
+  font-size: 10px;
+  color: red;
+}

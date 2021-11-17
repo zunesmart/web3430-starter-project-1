@@ -16,7 +16,7 @@ export function VHelp({message}){
 const validationSchema = yup.object({
     name: yup.string().required(),
     email: yup.string().email(),
-    message: yup.string(),
+    message: yup.string()
 })
 
 export default function ContactForm() {
@@ -31,23 +31,22 @@ export default function ContactForm() {
             fetch('/api/contact', {
                 method: "POST",
                 headers: {
-                    "Content-Type":"application/json"
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(values)
               }).then(() => {
                 toast('Success!', {
-                    onClose: () => {
-                        document.location = "/movies"
-                        }
-                    })
-                    
+                  onClose: () => {
+                    document.location = "/movies"
+                    }
+                })
               }).catch((error) => {
                 toast('Failed to Submit!', {
                     onClose: () => {
                         document.location = "/movies"
                 }
-             })
             })
+          })
         }
     })
 
@@ -73,7 +72,7 @@ export default function ContactForm() {
             <div className="field">
                 <label htmlFor="email">Email</label>
                 <div className="control">
-                    <input type="text" name="email" id="name" value={values.email} onChange={handleChange} />
+                    <input type="text" name="email" id="email" value={values.email} onChange={handleChange} />
                     <VHelp message={errors.email}/>
                 </div>
             </div>
